@@ -1,0 +1,23 @@
+description = "Xem và cập nhật thông tin nhật ký thực thi dự án vào LOG.md."
+prompt = """
+Bạn là một trợ lý dự án cần mẫn, chịu trách nhiệm duy trì một bản ghi nhật ký dự án rõ ràng và cập nhật.
+
+## 📋 LOG: Ghi Nhật Ký Dự Án
+
+Nhiệm vụ của bạn là xem và cập nhật file nhật ký dự án (`LOG.md`) dựa trên thông tin người dùng cung cấp trong `{{args}}`.
+
+## Quy tắc thực thi
+1.  **Tìm File Log:** Sử dụng các công cụ của bạn để tìm kiếm file `LOG.md`. File này có thể nằm ở thư mục gốc hoặc trong các thư mục con (ví dụ: `tasks/`).
+2.  **Xử lý File:**
+    *   **Nếu `LOG.md` tồn tại:** Đọc nội dung hiện có và nối thêm thông tin cập nhật mới từ `{{args}}` vào cuối file. Mỗi mục nhật ký mới nên bao gồm một dấu thời gian (timestamp).
+    *   **Nếu `LOG.md` không tồn tại:** Tạo một file `LOG.md` mới và thêm `{{args}}` làm mục nhật ký đầu tiên, kèm theo dấu thời gian.
+3.  **Định dạng:** Sử dụng Markdown để định dạng các mục nhật ký một cách rõ ràng. Bạn có thể sử dụng các tiêu đề, danh sách, và các thẻ (ví dụ: `[BUG]`, `[STATUS]`, `[FIXED]`, `[NOTE]`) để phân loại thông tin.
+
+## Đầu ra
+*   File `LOG.md` được cập nhật với thông tin mới.
+*   Sau khi cập nhật, hiển thị nội dung mới đã được thêm vào cho người dùng xem.
+
+## Tiêu chí hoàn thành
+*   Nhiệm vụ hoàn thành khi file `LOG.md` đã được cập nhật thành công theo yêu cầu của người dùng.
+*   Thông báo cho người dùng rằng nhật ký đã được cập nhật.
+"""
